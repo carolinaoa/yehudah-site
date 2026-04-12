@@ -13,24 +13,21 @@
 
 <body>
 
-<!-- OVERLAY -->
-<div class="overlay" id="overlay">
-  <img id="overlay-img">
+<!-- SOCIAL -->
+<div class="social">
+  <a href="https://wa.me/qr/SFRCLZT7OAUAM1" target="_blank">
+    <img src="images/whatsapp.png">
+  </a>
+  <a href="https://www.instagram.com/yehudah_oia" target="_blank">
+    <img src="images/instagram.png">
+  </a>
 </div>
 
-<!-- ================= TELA 1 ================= -->
-<section class="hero" id="tela1">
-
-  <div class="social">
-    <a href="https://wa.me/qr/SFRCLZT7OAUAM1" target="_blank">
-      <img src="images/whatsapp.png">
-    </a>
-    <a href="https://www.instagram.com/yehudah_oia" target="_blank">
-      <img src="images/instagram.png">
-    </a>
-  </div>
+<!-- ================= QUADRO ================= -->
+<section class="hero">
 
   <div class="container">
+
     <div class="left">
       <div class="image-wrapper">
         <img src="images/quadro.png">
@@ -43,7 +40,7 @@
       <p>
         Impressão digital em alta resolução<br>
         Dimensões: A3<br>
-        Moldura de Madeira com vidro
+        Moldura de madeira com vidro
       </p>
 
       <h2>R$ 197,00</h2>
@@ -53,19 +50,53 @@
       </a>
 
       <p class="sub">Algumas ideias precisam de um símbolo.</p>
-
-      <a href="#tela3" class="btn outline">SAIBA MAIS</a>
     </div>
+
   </div>
 
-  <a href="#tela2" class="arrow">›</a>
 </section>
 
-
-<!-- ================= TELA 2 ================= -->
-<section class="hero" id="tela2">
+<!-- ================= CAMISETA ================= -->
+<section class="hero alt">
 
   <div class="container">
+
+    <div class="left">
+      <div class="image-wrapper">
+        <img src="images/camiseta.png">
+      </div>
+    </div>
+
+    <div class="right">
+      <h1>OVERSIZED ORDEM</h1>
+
+      <p>
+        Gola Alta<br>
+        Algodão 94% com Elastano 6%<br>
+        200g de gramatura<br>
+        Ribana 2x1 canelada<br>
+        Fio 30/1<br>
+        <strong>Tamanho único</strong>
+      </p>
+
+      <h2>R$ 147,00</h2>
+
+      <a href="https://wa.me/qr/SFRCLZT7OAUAM1?text=Olá,%20tenho%20interesse%20na%20CAMISETA%20ORDEM" target="_blank" class="btn">
+        COMPRAR
+      </a>
+
+      <p class="sub">Ordem precede autoridade.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= CANECA ================= -->
+<section class="hero">
+
+  <div class="container">
+
     <div class="left">
       <div class="image-wrapper">
         <img src="images/caneca.jpg">
@@ -77,7 +108,7 @@
 
       <p>
         Caneca de vidro jateada<br>
-        325 ml
+        325ml
       </p>
 
       <h2>R$ 87,00</h2>
@@ -87,41 +118,76 @@
       </a>
 
       <p class="sub">Algumas ideias precisam de um símbolo.</p>
-
-      <a href="#tela3" class="btn outline">SAIBA MAIS</a>
     </div>
+
   </div>
 
-  <a href="#tela1" class="arrow">‹</a>
 </section>
 
+<!-- ================= SOBRE ================= -->
+<section class="about">
 
-<!-- ================= TELA 3 ================= -->
-<section class="about" id="tela3">
+  <h3>ORDEM · INTEGRIDADE · AUTORIDADE</h3>
 
-  <div class="about-content">
+  <p>
+    Yehudah nasce da convicção de que autoridade não é concedida, é construída.
+  </p>
 
-    <h3>ORDEM; INTEGRIDADE; AUTORIDADE</h3>
+  <p>
+    Em uma cultura que busca influência antes de responsabilidade,
+    escolhemos o caminho da estrutura.
+  </p>
 
-    <p>
-      Yehudah nasce da convicção de que autoridade não é concedida, é construída.
-    </p>
+  <p class="highlight">Ordem precede autoridade.</p>
 
-    <p>
-      Em uma cultura que busca influência antes de responsabilidade, escolhemos o caminho da estrutura.
-    </p>
-
-    <p class="highlight">Ordem precede autoridade.</p>
-
-    <div class="banner">
-      A primeira coleção da Yehudah “ORDEM” manifesta um desejo de representar uma geração que acredita que o trabalho edifica; busca ser referência e preza pela ordem!
-    </div>
-
+  <div class="banner">
+    A coleção “ORDEM” representa uma geração que valoriza disciplina,
+    construção e responsabilidade.
   </div>
 
   <div class="footer">Yehudah © 2026</div>
 
 </section>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay">
+  <span class="close">&times;</span>
+  <img id="overlay-img">
+</div>
+
+<!-- SCRIPT -->
+<script>
+const overlay = document.getElementById("overlay");
+const overlayImg = document.getElementById("overlay-img");
+const closeBtn = document.querySelector(".close");
+
+// abrir imagem
+document.querySelectorAll(".image-wrapper img").forEach(img => {
+  img.addEventListener("click", () => {
+    overlay.classList.add("active");
+    overlayImg.src = img.src;
+  });
+});
+
+// fechar no X
+closeBtn.addEventListener("click", () => {
+  overlay.classList.remove("active");
+});
+
+// fechar clicando fora
+overlay.addEventListener("click", (e) => {
+  if (e.target === overlay) {
+    overlay.classList.remove("active");
+  }
+});
+
+// fechar com ESC
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    overlay.classList.remove("active");
+  }
+});
+</script>
 
 </body>
 </html>
